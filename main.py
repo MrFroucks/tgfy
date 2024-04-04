@@ -17,7 +17,6 @@ db = Database('database.db')
 
 @dp.message_handler(commands=['start','help','blocks'])
 async def start(message: types.Message):
-	await bot.delete_message(message.from_user.id,message.message_id)
 	if not db.user_exists(message.from_user.id):
 		await bot.send_photo(chat_id = message.from_user.id,photo = "https://i.postimg.cc/dtBtL0P1/welcome.png",caption = '<b>[EN]</b>\nHi! I am your assistant, designed to help you adapt to a new society.\nChoose your language:\n\n\n<b>[ES]</b>\n¡Hola! Soy tu asistente para adaptarme a la nueva sociedad.\nElige tu idioma:\n\n\n<b>[RU]</b>\nПривет! Я — твой помощник, призванный помочь адаптироваться в новом обществе.\nВыбери свой язык:',
 			reply_markup=mk.langMenu)
