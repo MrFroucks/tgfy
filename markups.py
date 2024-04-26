@@ -17,7 +17,7 @@ langMenu.add(langEN,langES,langRU)
 # МЕНЮ БЛОКОВ С ПЕРЕВОДОМ
 # -------------------------------------------------------------------------------
 def blocksMenu(lang):
-	blocksMenu = InlineKeyboardMarkup(row_width=3)
+	blocksMenu = InlineKeyboardMarkup(row_width=4)
 	block1 = InlineKeyboardButton(text=ll('🍾Культура и тенденции',lang),callback_data='cultura')
 	block2 = InlineKeyboardButton(text=ll('👾Навигация',lang),callback_data='nav')
 	block3 = InlineKeyboardButton(text=ll('🦻Словарь',lang),callback_data='dic')
@@ -25,7 +25,7 @@ def blocksMenu(lang):
 	block5 = InlineKeyboardButton(text=ll('⭐️Повседневная жизнь',lang),callback_data='dlf')
 	block6 = InlineKeyboardButton(text=ll('ПОМЕНЯТЬ ЯЗЫК',lang),callback_data='LNG')
 	block7 = InlineKeyboardButton(text=ll('ПЛАТНАЯ ПОДПИСКА',lang),callback_data='VIP')
-	blocksMenu.add(block2,block3,block5,block6)
+	blocksMenu.add(block2,block3,block5,block4,block6)
 	return blocksMenu
 
 
@@ -57,6 +57,36 @@ def BtrnMenu(lang):
 	Btrn1 = InlineKeyboardButton(text=ll('👾Навигация',lang),callback_data='nav')
 	BtrnMenu.add(Btrn1)
 	return BtrnMenu
+
+# -------------------------------------------------------------------------------
+# КЛАВИАТУРА ОБЩЕСТВО
+# -------------------------------------------------------------------------------
+def obsMenu(lang):
+	obsMenu = ReplyKeyboardMarkup(resize_keyboard=True)
+	obs1 = KeyboardButton(ll('Почему посторонний может спросить сигарету или зажигалку?',lang))
+	obs2 = KeyboardButton(ll('Почему русские угрюмые?',lang))
+	obs3 = KeyboardButton(ll('Кто такой гопник?',lang))
+	obs4 = KeyboardButton(ll('Кто такие маргиналы и где их можно встретить?',lang))
+	obs5 = KeyboardButton(ll('Почему люди собираются у подъезда?',lang))
+	obs6 = KeyboardButton(ll('Кто такие алкаши, пьянь?',lang))
+	obs7 = KeyboardButton(ll('На какие части делится Москва?',lang))
+	obs8 = KeyboardButton(ll('Как принято говорить между собой у русских, присутствует ли у них жестикуляция, как они обращаются друг к другу?',lang))
+	obs9 = KeyboardButton(ll('Как здороваются русские?',lang))
+	obs10 = KeyboardButton(ll('Как в России относятся к женщинам?',lang))
+	obs11 = KeyboardButton(ll('Как в России относятся к мужчинам?',lang))
+	obs12 = KeyboardButton(ll('Как прощаются русские?',lang))
+	obs13 = KeyboardButton(ll('Как в России относятся к ЛГБТ?',lang))
+	obs14 = KeyboardButton('/blocks')
+	obsMenu.add(obs1,obs2,obs3,obs4,obs5,obs6,obs7,obs8,obs9,obs10,obs11,obs12,obs13,obs14)
+	return obsMenu
+
+def BobsMenu(lang):
+	BobsMenu = InlineKeyboardMarkup()
+	Bobs1 = InlineKeyboardButton(text=ll('/blocks',lang),callback_data='blocksBACK')
+	BobsMenu.add(Bobs1)
+	return BobsMenu
+
+
 
 
 # -------------------------------------------------------------------------------
